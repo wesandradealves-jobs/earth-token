@@ -1,0 +1,26 @@
+@import url('http://sooncountdown.com/static/css/soon.min.css');
+
+.countdown
+    +animation(opacity,2000ms) 
+    .soon
+        &[data-layout*=group]
+            padding: 0px 0 30px
+        &-text
+            text-transform: uppercase
+            font-weight: 800
+            &.soon-label
+                color: lighten($cyan,20%)
+            &:not(.soon-label)
+                font-size: 7rem
+    > h2 
+        color: lighten($cyan,20%)
+        margin: 30px auto 0
+@media only screen and (max-width: 565px)
+    .countdown 
+        margin: 60px auto 30px
+        zoom: .6
+        .soon
+            &-text
+                &.soon-label
+                    color: lighten($cyan,20%)
+                    font-size: 1.5rem

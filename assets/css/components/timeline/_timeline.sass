@@ -1,0 +1,274 @@
+.timeline
+    align-items: center
+    display: flex 
+    flex-wrap: wrap
+    flex-flow: row
+    overflow: hidden
+    margin: 0 -35px
+    position: relative
+    &-content
+        display: flex 
+        flex-flow: column
+        justify-content: space-evenly
+        margin: 80px auto 0 -80px
+        overflow: hidden
+        position: relative
+        width: 100%
+        &-cards
+            align-items: center
+            display: flex 
+            flex-flow: row
+            flex-wrap: wrap   
+            height: auto 
+            overflow: inherit 
+            position: relative
+            width: inherit 
+            z-index: 2
+            &::after 
+                clear: both 
+                content: ""
+                display: block 
+            > .item  
+                &.-active
+                    &:nth-child(2n+1)
+                        padding-right: 20px
+                    &:nth-child(2n+2)
+                        padding-left: 20px
+                    &::before,
+                    &::after 
+                        +width(300ms)
+                        width: 0%
+                    &.-full
+                        +scale(1.1)
+                font-weight: 800
+                flex: 0 0 auto
+                padding: 40px 0
+                position: relative 
+                +transition(2000ms)
+                width: 50%
+                > h2 
+                    &.-mirrored 
+                        &::after 
+                            opacity: .1
+                            zoom: .7
+                    margin: 30px auto
+                    z-index: 50
+                > .item-achievement
+                    +border(999px)
+                    background-color: white 
+                    box-shadow: 0px 0px 30px 5px rgba(0,0,0,.1), 0px 0px 0px 30px rgba(255,255,255,.3)
+                    color: $cyan
+                    display: flex 
+                    flex-flow: column
+                    flex-wrap: wrap 
+                    font-weight: 800
+                    font-size: 1.8rem
+                    justify-content: center  
+                    height: 240px
+                    margin: 0 auto 90px 
+                    padding: 30px
+                    text-align: center
+                    width: 240px
+                    z-index: 3
+                    > span 
+                        > span 
+                            color: lighten($cyan, 25%)
+                            display: block
+                    .ico 
+                        margin: 0 auto 10px
+                &::after, 
+                &::before 
+                    background-color: white
+                    display: block 
+                    height: 0 
+                    max-width: 170px
+                    padding: 1px
+                    position: absolute 
+                    top: 50%
+                    width: 100%
+                &:nth-child(2n+1)
+                    &.animate
+                        +animation(left-to-right,2000ms)
+                    &::after 
+                        content: ""
+                        right: 0 
+                    text-align: right
+                    padding-right: 190px
+                &:nth-child(2n+2)
+                    &.animate
+                        +animation(right-to-left,2000ms)
+                    padding-left: 190px
+                    top: 60px
+                    &::before 
+                        content: ""
+                        left: 0
+
+                &.-full 
+                    &::after, 
+                    &::before 
+                        display: none
+                    flex: 1
+                    left: 25%
+                    padding-left: 0 !important
+                    padding-right: 0 !important
+                    width: 100%
+                    z-index: 100
+                    &+.item 
+                        margin-top: 500px
+        > * 
+            width: 100%
+
+
+        &-holder
+            width: 100%
+        &-marker 
+            background-color: white
+            content: ""
+            display: block 
+            height: 100%
+            left: 50%
+            margin-left: -1.5px
+            position: absolute
+            top: 0 
+            width: 3px
+            z-index: 1
+
+    &-navigation 
+        flex: 0 0 auto 
+        padding-left: 30px
+        width: 145px
+        z-index: 50
+        &+div 
+            flex: 1
+            height: 1130px
+            overflow: hidden
+            z-index: 2 
+            &::before 
+                background: -moz-linear-gradient(top, $light-blue 0%, rgba(255,255,255,0) 50%) /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, $light-blue 0%,rgba(255,255,255,0) 50%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-blue', endColorstr='#00ffffff',GradientType=0 ) /* IE6-9 */
+                content: ""
+                display: block 
+                height: 300px
+                left: 0
+                position: absolute
+                top: 70px
+                width: 100%
+                z-index: 80
+            &::after 
+                background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, $cyan 50%) /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,$cyan 50%) /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,$cyan 50%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$cyan',GradientType=0 ) /* IE6-9 */
+                content: ""
+                display: block 
+                height: 300px
+                left: 0
+                position: absolute
+                bottom: -105px
+                width: 100%
+                z-index: 80
+
+        > ul 
+            > li  
+                cursor: pointer
+                font-size: 1.3rem
+                font-weight: 800
+                position: relative
+                padding-left: 40px
+                &::after 
+                    background-color: white
+                    content: ""
+                    display: block 
+                    height: 2px 
+                    left: -100vw
+                    margin-top: -.5px
+                    position: absolute
+                    +transition(.2s)
+                    top: 50%
+                    width: 100vw
+                &:hover,
+                &.-active
+                    &::after 
+                        left: calc(-100vw - -25px)
+                    color: $lighter-blue
+                &.-active
+                    font-size: 3rem
+                display: block 
+                margin: 30px 0
+
+@media only screen and (max-width: 1024px)
+    .timeline 
+        zoom: .6
+@media only screen and (max-width: 735px)
+    .timeline   
+        flex-flow: column
+        height: auto 
+        margin: 0 -95px
+        padding: 0 90px 
+        zoom: .5
+        &-content
+            top: 10px
+            &-marker
+                top: 5px
+            &-holder
+                zoom: 1.5
+            &::after 
+                display: none
+        &-navigation
+            margin: 45px auto 0
+            padding-left: 0
+            width: 100%
+            zoom: 1.5
+            &+div 
+                &::before 
+                    background: -moz-linear-gradient(top, $light-blue 35%, rgba(255,255,255,0) 100%) /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, $light-blue 35%,rgba(255,255,255,0) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-blue', endColorstr='#00ffffff',GradientType=0 ) /* IE6-9 */   
+                    top: 0
+            > ul  
+                text-align: center 
+                > li  
+                    &.-active
+                        margin-top: -5px
+                        margin-bottom: -5px
+                    display: inline-block 
+                    margin: 10px 20px
+                    padding-left: 0 
+                    text-align: center 
+                    vertical-align: middle 
+                    &::after,
+                    &::before 
+                        display: none
+        &-content-cards
+            position: relative 
+            top: 0
+            > .item 
+                &.-full 
+                    zoom: .9
+                h2 
+                    text-shadow: 0px 0px 50px #000
+                &::after,
+                &::before 
+                    max-width: 35px
+                &:nth-child(2n+1)
+                    padding-right: 45px
+                &:nth-child(2n+2)
+                    padding-left: 45px
+        &-content 
+            margin: 0 auto
+            &::before 
+                display: none
+@media only screen and (max-width: 490px)
+    .timeline   
+        &-navigation
+            zoom: 2
+            &+div   
+                height: 600px
+_::-webkit-full-page-media main, _:future main, :root main
+    .timeline   
+        &-content
+            &-holder
+                &::after,
+                &::before 
+                    display: none

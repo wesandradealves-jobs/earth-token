@@ -1,0 +1,254 @@
+@import 'assets/css/tools/_mixins' 
+@import 'assets/css/tools/_colors' 
+
+body, html
+    +animation(opacity,2000ms)
+    font-family: 'Montserrat', sans-serif 
+
+textarea[placeholder] 
+    text-overflow: ellipsis
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+ 
+
+input[placeholder] 
+    text-overflow: ellipsis
+    color: #eaeaea
+    opacity: 1 
+    font-weight: 300
+
+
+::-moz-placeholder 
+    text-overflow: ellipsis 
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+
+
+input::-webkit-input-placeholder 
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+
+
+textarea::-webkit-input-placeholder 
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+
+
+input:-ms-input-placeholder 
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+
+
+textarea:-ms-input-placeholder 
+    color: #eaeaea
+    opacity: 1
+    font-weight: 300
+
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+
+[class*="brandico-"]::before 
+    font-family: 'brandico', sans-serif
+
+.container
+    display: block
+    max-width: 1280px
+    margin: 0 auto
+    padding-left: 30px
+    padding-right: 30px
+
+@for $i from 1 through 5
+    h#{$i}
+        font-weight: 800 
+
+h1 
+    font-size: 5rem
+h2  
+    font-size: 3rem
+    &.-mirrored
+        &::after 
+            content: attr(title)
+            display: inherit 
+            font-size: 300%
+            left: 0
+            opacity: .1
+            position: absolute
+            top: -5px 
+            text-align: inherit  
+            width: inherit
+        display: block 
+        margin: 0 auto 
+        position: relative 
+        text-align: center
+        width: 100%
+
+h3 
+    font-size: 2.3rem
+
+p 
+    font-size: 1.5rem
+    line-height: 1.3em
+    strong 
+        font-weight: bold
+    > .paragraph-title
+        display: block 
+        font-weight: bold 
+        margin: 90px auto
+
+.embed-container 
+    height: 100% 
+    max-width: 100% 
+    overflow: hidden 
+    position: relative 
+    > iframe, 
+    > object, 
+    > embed 
+        height: 100%  
+        left: 0 
+        position: absolute 
+        top: 0 
+        width: 100% 
+
+main 
+    section 
+        .container
+            > h2 
+                &:first-of-type ~ h2 
+                    margin: 60px auto
+        h2 
+            color: $blue-jeans
+            font-size: 2.5rem
+            letter-spacing: .03em
+            margin: 0 auto 30px
+            text-align: center 
+            &+p 
+                display: block 
+                color: $blue-jeans
+                margin: 0 auto 60px
+                max-width: 770px
+                text-align: center
+                width: 100%
+            > small 
+                display: block
+                font-size: 55% 
+
+.ico
+    background-image: url(assets/imgs/sprite.png)
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-color: transparent 
+    display: block 
+    &.-flag
+        background-position: -452px 0
+        height: 57px
+        width: 53px
+
+.logo
+    background-image: url(assets/imgs/sprite.png)
+    background-repeat: no-repeat
+    background-position: 0 0
+    display: block
+    height: 81px
+    overflow: hidden
+    text-indent: -999px
+    width: 200px
+
+.element
+    display: block 
+    position: absolute
+
+.closeBtn
+    +border(999px)
+    background-color: black 
+    color: white 
+    display: block 
+    font-size: 19px
+    height: 32px
+    line-height: 32px
+    text-align: center 
+    width: 32px
+  
+.btn
+    display: block
+    border-radius: 999px 
+    font-size: 1.1rem
+    font-weight: bold
+    padding: 20px 30px
+    text-align: center
+    text-transform: uppercase
+    &.-play
+        color: $cyan 
+        display: block
+        padding: 20px 0
+        width: 120px
+        > i 
+            +border(999px)
+            box-shadow: 0px 0px 25px -5px rgba(0,0,0,.3), 0 0 0 15px rgba(255,255,255,.3), 0 10px 76px 0px #3faff8
+            background-color: white 
+            display: inherit
+            font-size: 2.5rem 
+            height: 85px
+            line-height: 85px
+            margin: inherit 
+            margin-bottom: 35px 
+            text-align: center
+            width: 85px
+    &.-circle
+        border: 2px white solid 
+        color: white 
+        font-size: 1.3rem
+        letter-spacing: .1em
+        &:hover
+            background-color: $cyan
+            border-color: rgba(0,0,0,0)
+        &-2
+            border-color: $cyan
+            color: $cyan
+            &:hover
+                color: white  
+    &.-default 
+        &:hover 
+            background-color: $cyan
+            color: white 
+        background-color: white 
+        color: $cyan
+@media only screen and (max-width: 1024px)
+    section 
+        .container
+            > h2  
+                zoom: .9
+                &+p  
+                    text-align: center
+    h1 
+        font-size: 2.5rem
+    h2 
+        font-size: 2rem
+        &.-mirrored
+            &::after 
+                font-size: 180%
+                top: -3px
+@media only screen and (max-width: 736px)
+    html, 
+    body 
+        * 
+            animation: none !important
+@media only screen and (max-width: 565px)
+    header 
+        > .header 
+            > .container 
+                > .logo 
+                    zoom: .7
+    h2 
+        &.-mirrored
+            &::after 
+                display: none

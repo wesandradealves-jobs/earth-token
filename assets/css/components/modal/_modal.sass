@@ -1,0 +1,43 @@
+.modal
+    &.-opened
+        display: flex
+    background-color: rgba(0,0,0,.9)
+    align-items: center
+    // display: flex 
+    display: none
+    flex-wrap: wrap 
+    flex-flow: column
+    justify-content: center 
+    height: 100%
+    left: 0
+    padding: 30px
+    position: fixed  
+    top: 0
+    width: 100%
+    z-index: 1000000
+    &-body
+        > .closeBtn
+            background-color: $light-green
+            margin: -15px
+            position: absolute
+            right: 0
+            top: 0
+        > div 
+            > p 
+                background-color: white
+            background: url(https://cdn.dribbble.com/users/421466/screenshots/2379575/replace-2r-400px.gif)  center center / 140px no-repeat white
+            display: block 
+            height: 100%
+            overflow-x: hidden
+            overflow-y: auto
+            position: relative
+            width: 100%
+        +border(20px)
+        background-color: white
+        display: block 
+        height: 100%
+        max-height: 600px
+        max-width: 800px
+        padding: inherit
+        position: relative 
+        width: 100%

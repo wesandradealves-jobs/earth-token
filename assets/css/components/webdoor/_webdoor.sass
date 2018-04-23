@@ -1,0 +1,145 @@
+.webdoor 
+    color: white 
+    overflow: hidden
+    > .social
+        &.-sticky
+            position: fixed 
+            right: 20px 
+            top: 420px
+        > li  
+            &::after
+                background-color: white 
+                content: ""
+                display: block 
+                height: 1px
+                margin-top: -.5px
+                position: absolute
+                right: -20px
+                top: 50%
+                +width(2000ms)
+                width: 0
+            &:hover 
+                > a 
+                    background-color: white 
+                    color: $cyan                
+                &::after 
+                    width: 15px
+            display: block 
+            margin: 0 0 15px !important
+            position: relative
+            > a 
+                opacity: 1
+        position: absolute
+        right: 20px
+        margin-top: -275px
+        top: 50%
+        z-index: 50
+    &::before,
+    &::after 
+        background: url(assets/imgs/wave.png) center bottom no-repeat transparent
+        bottom: -360px
+        content: ""
+        display: block
+        height: 693px
+        left: 0
+        position: absolute
+        width: 100%
+        z-index: 1
+    &::after 
+        +animation(2000ms,hill_2) 
+        background-image: url(assets/imgs/wave-2.png)
+        bottom: -125px
+        padding-left: 50px
+        opacity: .3
+        z-index: 2
+    > .container
+        padding-top: 60px
+        padding-bottom: 300px
+        text-align: center   
+        z-index: 3 
+        > .btn 
+            &.-play
+                margin: 20px auto -230px 
+        > .element
+            &.sun 
+                +animation(2000ms,sun)
+                background-image: url(assets/imgs/sun.png)
+                bottom: 310px
+                content: ""
+                height: 82px
+                right: 40px
+                width: 82px
+            &.clouds-1
+                +animation(2000ms,cloud_1)
+                background-image: url(assets/imgs/clouds-1.png)
+                bottom: 295px
+                content: ""
+                height: 56px
+                right: 0px
+                width: 211px
+            &.clouds-2
+                +animation(2000ms,cloud_2)
+                background-image: url(assets/imgs/clouds-2.png)
+                bottom: 365px
+                content: ""
+                height: 74px
+                right: -60px
+                width: 290px
+            &.tree-1
+                background-image: url(assets/imgs/trees-1.png)
+                bottom: 250px
+                content: ""
+                height: 183px
+                left: -310px
+                width: 160px
+            &.tree-2
+                background-image: url(assets/imgs/trees-2.png)
+                bottom: 40px
+                content: ""
+                height: 262px
+                right: -190px
+                width: 231px
+        > .navigation
+            align-items: center
+            display: flex
+            flex-flow: row
+            justify-content: center
+            > li  
+                margin: 0 15px
+                position: relative  
+                > .btn 
+                    font-size: 1.3rem
+                    letter-spacing: .1em
+                    min-width: 270px 
+@media only screen and (min-width: 1921px)
+    .webdoor
+        > .container
+            padding-bottom: 60px
+            > .btn 
+                &.-play
+                    margin: 20px auto 0
+        .element,
+        &::before, 
+        &::after 
+            display: none 
+@media only screen and (max-width: 900px)
+    .webdoor
+        > .social 
+            display: none
+@media only screen and (max-width: 736px)
+    .webdoor
+        > .container 
+            > .navigation
+                > li  
+                    > .btn 
+                        min-width: initial
+        .element
+            display: none
+@media only screen and (max-width: 565px)
+    .webdoor
+        > .container 
+            > .navigation
+                flex-flow: column
+                > li 
+                    margin: 15px auto 
+                    width: 100%

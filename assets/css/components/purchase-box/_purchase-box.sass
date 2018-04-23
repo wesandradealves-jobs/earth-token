@@ -1,0 +1,44 @@
+.purchase-box
+    align-items: stretch
+    +border(10px)
+    background-color: $blue-jeans
+    color: white
+    display: flex
+    flex-wrap: wrap
+    flex-flow: row
+    justify-content: center
+    padding: 40px
+    &+p 
+        color: white 
+        display: block 
+        margin: 40px auto 90px
+        max-width: 915px
+        text-align: center
+    > p 
+        &:first-of-type 
+            border-right: 1px white solid
+            margin-right: -1px
+        font-size: 2.5rem
+        font-weight: 800
+        padding: 0 45px
+        small 
+            display: block 
+            font-weight: normal
+            font-size: 60%
+@media only screen and (max-width: 736px)
+    .purchase-box
+        padding: 40px 0
+        zoom: .8
+@media only screen and (max-width: 540px)
+    .purchase-box
+        zoom: .6
+@media only screen and (max-width: 420px)
+    .purchase-box 
+        > p 
+            &:first-of-type 
+                border-right: 0  
+            &:not(:last-child)
+                padding-bottom: 15px
+            text-align: center 
+        flex-flow: column 
+        zoom: 1

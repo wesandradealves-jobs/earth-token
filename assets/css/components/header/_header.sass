@@ -1,0 +1,48 @@
+header  
+    background-color: $light-blue   
+    *
+        position: relative
+.header
+    left: 0 
+    position: relative
+    top: 0 
+    width: 100%
+    z-index: 10 
+    > .container
+        align-items: center
+        display: flex  
+        flex-flow: row
+        flex-wrap: wrap 
+        justify-content: flex-start 
+        max-width: 100%     
+        padding-top: 15px
+        padding-bottom: 15px
+@media only screen and (max-width: 1140px)
+    .header
+        > .navigation
+            padding-right: 15px
+            > ul  
+                padding-right: 0 
+        > .container
+            padding-top: 0
+            padding-left: 0 
+            padding-right: 0
+            > .logo 
+                order: 2
+                margin-left: 15px
+            > .btn 
+                animation: none !important
+                +border(0px)
+                margin: 0 auto 20px
+                order: 1
+                width: 100%
+@media only screen and (max-width: 900px)
+    .header
+        > .container
+            > .navigation
+                > ul  
+                    > li 
+                        &:last-child 
+                            display: block 
+                        &:not(:last-child)
+                            display: none

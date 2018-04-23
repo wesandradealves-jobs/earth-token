@@ -1,0 +1,81 @@
+.cards-holder
+    align-items: stretch
+    display: flex
+    flex-flow: row 
+    flex-wrap: wrap
+    justify-content: center
+    margin: 0 -15px -30px
+    > .card
+        flex: 0 0 auto
+        height: 500px
+        padding: 0 15px 30px
+        width: 25%
+        &:hover,
+        &.-active
+            > div 
+                > p  
+                    > span,
+                    > a  
+                        display: block
+                    height: 100%
+                    justify-content: space-around
+                    opacity: .9
+        > div 
+            +border(10px)
+            background-position: center center 
+            background-size: cover 
+            background-repeat: no-repeat
+            display: flex 
+            flex-flow: column 
+            justify-content: flex-end
+            height: 100% 
+            overflow: hidden
+            width: 100%
+            > p
+                > strong 
+                    font-size: 2rem 
+                    > small 
+                        display: block
+                        font-size: 60%
+                > span  
+                    display: none
+                    height: 275px
+                    overflow-y: auto 
+                    overflow-x: hidden
+                    text-align: left
+                > * 
+                    display: block 
+                    &:nth-child(2)
+                        margin: 20px auto
+                > a  
+                    color: lighten($light-blue,25%)
+                    display: none
+                    font-size: 2rem
+                background-color: $blue-jeans
+                color: white
+                display: flex
+                flex-flow: column
+                flex: 0 0 auto
+                height: 90px
+                justify-content: normal
+                opacity: 1
+                padding: 20px 15px
+                +height(1000ms)
+                text-align: center
+                width: 100%
+@media only screen and (max-width: 736px)
+    #team
+        > .container  
+            > .cards-holder
+                > .card
+                    width: 50%
+                    zoom: 1
+@media only screen and (max-width: 666px)
+    #team
+        > .container 
+            > .cards-holder
+                flex-flow: column
+                > .card
+                    height: 500px
+                    width: 100%
+_::-webkit-full-page-media main, _:future main, :root main

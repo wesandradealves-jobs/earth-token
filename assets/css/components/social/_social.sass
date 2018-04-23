@@ -1,0 +1,22 @@
+.social
+    text-align: right 
+    > li 
+        display: inline-block 
+        text-align: center 
+        vertical-align: middle 
+        &:not(:first-child)
+            margin-left: 10px
+        > a  
+            +border(999px)
+            border: 1px white solid 
+            color: white
+            display: inline-block  
+            font-size: 14px 
+            height: 30px 
+            line-height: 30px
+            opacity: .3
+            text-align: center 
+            width: 30px 
+        &:hover 
+            > a  
+                opacity: 1

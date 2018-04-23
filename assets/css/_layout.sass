@@ -1,0 +1,239 @@
+#natural-asset-exchange
+    color: $blue-jeans
+    > .container 
+        padding-bottom: 60px
+        img+.btn 
+            display: none
+            margin: 60px auto 0
+        > h3 
+            margin: 70px 0 40px 
+            text-align: initial
+            &+ul 
+                align-items: center
+                display: flex
+                flex-flow: row
+                flex-wrap: wrap
+                justify-content: space-between
+                text-align: center
+                margin: 0 -15px
+                > li  
+                    margin: 0 15px 30px
+                    width: 16.333%
+                    > img 
+                        filter: grayscale(1)
+                        max-width: 100%
+                        opacity: .5
+        > p  
+            max-width: 1040px 
+            margin: 50px auto 0
+            text-align: center
+#milestone-achievements
+    background: $light-blue 
+    background: -moz-linear-gradient(top, $light-blue 30%, $cyan 50%, #3eaef7 100%)
+    background: -webkit-linear-gradient(top, $light-blue 30%,$cyan 50%,#3eaef7 100%) 
+    background: linear-gradient(to bottom, $light-blue 30%,$cyan 50%,#3eaef7 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-blue', endColorstr='#3eaef7',GradientType=0 )
+    color: white
+    overflow: hidden
+    padding: 250px 0
+    h2 
+        color: inherit
+    &.animate
+        .timeline-navigation
+            > ul  
+                > li  
+                    position: relative 
+                    @for $i from 1 through 100
+                        &:nth-child(#{$i})
+                            +animation(left-to-right,(20s*$i)/40)         
+    .bottom-mask-opacity,
+    &::before,
+    &::after 
+        background-image: url(assets/imgs/wave.png) 
+        background-position: center bottom 
+        background-repeat: no-repeat 
+        background-color: transparent
+        bottom: -360px
+        content: ""
+        display: block
+        height: 693px
+        left: 0
+        position: absolute
+        width: 100%
+        z-index: 3
+    &::before 
+        bottom: initial 
+        transform-origin: center top 
+        transform: rotate(180deg)
+        top: 300px
+    .bottom-mask-opacity
+        background-image: url(assets/imgs/wave-3.png)
+        height: 860px
+        bottom: -312px
+        left: -225px 
+        opacity: 0.1
+        z-index: 2
+    > .container 
+        z-index: 1
+#solutions
+    .container 
+        padding-bottom: 90px
+        > ul
+            &:not(.-company-details)
+                align-items: stretch
+                display: flex
+                flex-wrap: wrap
+                flex-flow: row
+                > li  
+                    color: $light-blue
+                    flex: 1
+                    padding: 0 35px
+                    img 
+                        display: block 
+                        margin: 0 auto
+                    strong 
+                        display: block 
+                        font-weight: 800
+                        margin: 20px auto
+                        text-align: center
+#team
+    &::before
+        background-image: url(assets/imgs/wave.png) 
+        background-position: center bottom 
+        background-repeat: no-repeat 
+        background-color: transparent
+        bottom: 0
+        content: ""
+        display: block
+        height: 693px
+        left: 0
+        position: absolute
+        transform-origin: center top 
+        transform: rotate(180deg)
+        top: 580px
+        width: 100%
+        z-index: 2
+    &::after 
+        bottom: 0 
+        content: url(assets/imgs/vertical-wave.png)
+        display: block 
+        left: 0
+        position: absolute
+        z-index: 1
+    background: $light-green /* Old browsers */
+    background: -moz-linear-gradient(top, $light-green 0%, $lighter-cyan 100%) /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $light-green 0%,$lighter-cyan 100%) /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $light-green 0%,$lighter-cyan 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-green', endColorstr='$lighter-cyan',GradientType=0 ) /* IE6-9 */
+    overflow: hidden
+    position: relative
+    > .container 
+        padding-bottom: 60px
+        z-index: 3
+        > .btn  
+            max-width: 265px
+            margin: 60px auto 
+        > .token-and-funding-allocations
+            align-items: center
+            display: flex 
+            flex-flow: row
+            padding-left: 90px 
+            padding-right: 90px
+            > p 
+                color: white
+                flex: 1 
+                > img 
+                    display: block 
+                    margin: 0 auto 20px
+                    max-width: 100%
+                    &+span  
+                        display: block
+                        margin: -45px auto 0
+                        text-align: center
+        > h2 
+            margin-bottom: 60px
+@media only screen and (min-width: 1921px)
+    #team
+        > .container
+            padding-top: 60px
+        &::after,
+        &::before
+            display: none
+    #natural-asset-exchange
+        > .container 
+            padding-top: 60px
+            padding-bottom: 30px
+    #solutions
+        padding: 90px 15px
+    #milestone-achievements
+        padding: 90px 15px 0
+        &::after,
+        &::before,
+        .bottom-mask-opacity
+            display: none 
+@media only screen and (max-width: 1024px)
+    #team
+        > .container 
+            > .cards-holder
+                > .card
+                    width: 33.333%
+                    zoom: .8
+    #natural-asset-exchange
+        > .container    
+            padding-bottom: 0
+            > h3 
+                text-align: center
+                &+ul 
+                    justify-content: center
+                    margin-bottom: -30px
+                    > li  
+                        width: 33.333%
+    #solutions
+        .container 
+            > ul
+                &:not(.-company-details)
+                    flex-flow: column
+                    > li  
+                        padding: 15px
+                        text-align: center
+@media only screen and (max-width: 767px)
+    #natural-asset-exchange
+        > .container 
+            img+.btn 
+                display: block 
+@media only screen and (max-width: 736px)
+    #team
+        > .container 
+            > .token-and-funding-allocations
+                flex-flow: column  
+                text-align: center 
+                padding-left: 0  
+                padding-right: 0 
+                > p  
+                    &:nth-child(1)
+                        order: 2  
+                    &:nth-child(2)
+                        order: 1 
+    #milestone-achievements  
+        background: -moz-linear-gradient(top, $light-blue 40%, $cyan 50%, #3eaef7 100%)
+        background: -webkit-linear-gradient(top, $light-blue 40%,$cyan 50%,#3eaef7 100%) 
+        background: linear-gradient(to bottom, $light-blue 40%,$cyan 50%,#3eaef7 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$light-blue', endColorstr='#3eaef7',GradientType=0 )
+        padding: 200px 0 
+        .bottom-mask-opacity
+            display: none
+@media only screen and (max-width: 666px) 
+    #natural-asset-exchange
+        > .container    
+            > h3 
+                &+ul 
+                    > li  
+                        width: 50%
+@media only screen and (max-width: 490px)
+    #natural-asset-exchange
+        > .container   
+            > h3 
+                &+ul 
+                    flex-flow: column 
+                    > li  
+                        width: initial
